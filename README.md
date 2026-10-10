@@ -24,7 +24,12 @@ The supplied desktop and mobile reference boards are visual design references, n
 
 - Responsive editorial landing page with Olive Atelier wordmark and mobile navigation.
 - A dedicated [About page](./about.html) based on the latest story-page reference, with a story hero, journey collage, values, concept quote, gallery, and contact section.
-- Food-led hero, story, illustrative menu, atmosphere section, and filterable photo gallery.
+- A dedicated [Menu page](./menu.html) with a filterable dish grid (plates, small plates, sweets and drinks), a seasonal motto band, and a reservation call-to-action.
+- A dedicated [Gallery page](./gallery.html) with a filterable photo grid of food and spaces.
+- A dedicated [Contact page](./contact.html) with a visit/contact band and a demo enquiry form (no data is sent or stored).
+- Draft [Privacy](./privacy.html), [Terms](./terms.html), and [Refunds](./refunds.html) pages, linked from every footer, framed as templates for legal review rather than live policies.
+- A custom [404 page](./404.html) so mistyped or moved links land on a helpful, on-brand screen instead of a browser default.
+- Food-led hero, story, illustrative menu, atmosphere section, and filterable photo gallery on the home page.
 - Demo reservation form with date/time/party-size validation and a clear no-booking-sent notice.
 - Explicit placeholders for unconfirmed location, hours, and contact information.
 - Keyboard focus styling, skip link, reduced-motion support, semantic labels, and responsive layouts.
@@ -51,7 +56,7 @@ See [design.md](./design.md) for the complete design specifications.
 
 **Prototype implementation**
 
-The initial repository contained documentation only. The current prototype is implemented in `index.html`, `css/styles.css`, and `js/main.js`; it uses native browser technologies and has no package dependencies or build step.
+The initial repository contained documentation only. The current prototype is implemented in `index.html`, `about.html`, `menu.html`, `gallery.html`, `contact.html`, `css/styles.css`, and `js/main.js`; it uses native browser technologies and has no package dependencies or build step.
 
 ## Technology Stack
 
@@ -67,6 +72,13 @@ The following documents define the project requirements and development workflow
 
 - [PRD.md](./PRD.md) — Product requirements, target users, user journeys, and acceptance criteria.
 - [about.html](./about.html) — standalone Olive Atelier story/about page.
+- [menu.html](./menu.html) — standalone Olive Atelier menu page with filterable dishes.
+- [gallery.html](./gallery.html) — standalone Olive Atelier gallery page.
+- [contact.html](./contact.html) — standalone Olive Atelier visit/contact page.
+- [privacy.html](./privacy.html) — draft privacy policy (template for legal review).
+- [terms.html](./terms.html) — draft terms of use (template for legal review).
+- [refunds.html](./refunds.html) — draft refund and cancellation policy (template for legal review).
+- [SECURITY.md](./SECURITY.md) — security posture of the static site and what applies if a backend is added.
 - [design.md](./design.md) — Visual direction, color palette, typography, responsive rules, and visual QA.
 - [architecture.md](./architecture.md) — Repository findings and proposed application architecture.
 - [phases.md](./phases.md) — Implementation roadmap and phase acceptance criteria.
@@ -101,7 +113,7 @@ Stock photography and other demonstration assets must not be represented as phot
 6. **Phase 6 — Responsive and Accessibility QA:** Test layouts, keyboard navigation, contrast, and interactions.
 7. **Phase 7 — Performance and Final Review:** Optimize assets, verify the build, and complete the final review.
 
-**Current state:** Responsive home and about concept pages are in place. The About page follows the supplied story-page reference. The existing home-page interactions and layout have been checked; there is no build or automated test suite in this repository.
+**Current state:** Responsive home, about, menu, gallery, and contact concept pages are in place, plus draft Privacy, Terms, and Refunds pages, a custom 404 page, and a security note. The About page follows the supplied story-page reference. The existing home-page interactions and layout have been checked; there is no build or automated test suite in this repository.
 
 ## Limitations and Next Steps
 

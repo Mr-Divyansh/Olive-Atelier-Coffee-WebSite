@@ -114,6 +114,8 @@ figure { margin: 0; }
 .experience__copy > p:not(.eyebrow) { max-width: 375px; margin: 20px 0 27px; color: rgb(247 243 232 / 76%); font-size: 14px; }
 .button--outline-light { min-height: 44px; padding-inline: 18px; border-color: rgb(198 165 107 / 76%); color: white; }
 .button--outline-light:hover { background: rgb(255 255 255 / 8%); }
+.button--outline { border-color: var(--color-primary); color: var(--color-primary); }
+.button--outline:hover { background: var(--color-primary); color: white; }
 .experience__images { display: grid; height: 320px; grid-template-columns: 1.05fr .72fr .8fr; align-items: stretch; gap: 12px; }
 .experience__images img { width: 100%; height: 100%; object-fit: cover; }
 .experience__images img:nth-child(2) { height: calc(100% - 32px); margin-top: 32px; }
@@ -387,6 +389,24 @@ figure { margin: 0; }
   .site-footer--story .wordmark, .site-footer--story .site-footer__thought { justify-self: center; }
   .site-footer--story .footer-nav { justify-content: center; flex-wrap: wrap; }
 }
+/* Additional pages: menu, gallery, contact — shared closing CTA band */
+.page-cta { padding-block: clamp(72px, 9vw, 120px); text-align: center; }
+.page-cta .eyebrow { justify-content: center; }
+.page-cta .heading { max-width: 560px; margin-inline: auto; }
+.page-cta > p:not(.eyebrow) { max-width: 440px; margin: 20px auto 30px; color: var(--color-text-muted); font-size: 14px; }
+@media (max-width: 760px) { .page-cta { padding-block: 72px; } }
+
+/* Contact enquiry textarea shares the demo booking-field treatment */
+.form-field textarea { width: 100%; min-height: 120px; padding: 12px; border: 1px solid var(--color-control-border); border-radius: 2px; background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); font-size: 12px; line-height: 1.55; resize: vertical; }
+.form-field textarea:focus-visible { border-color: var(--color-primary); }
+
+/* Medium phones: give the about photo strip a cleaner 2-up mosaic */
+@media (max-width: 540px) {
+  .about-gallery__grid { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 96px; }
+  .about-gallery__item--room { grid-row: span 2; }
+  .about-gallery__item--wide { grid-column: span 2; }
+}
+
 @media (max-width: 420px) {
   .story-hero { min-height: 370px; }
   .story-hero__content { min-height: 370px; }
@@ -407,3 +427,31 @@ figure { margin: 0; }
   .contact-band__details { grid-template-columns: 1fr 1fr; padding: 15px 0 0; border: 0; border-top: 1px solid var(--color-border); }
   .contact-band__map { grid-column: 1; }
 }
+
+/* Legal / policy pages */
+.legal { max-width: 760px; }
+.legal h2 { margin: 42px 0 12px; color: var(--color-primary); font-family: var(--font-heading); font-size: 22px; }
+.legal h2:first-of-type { margin-top: 6px; }
+.legal p { margin: 0 0 14px; font-size: 14px; line-height: 1.75; }
+.legal ul { margin: 0 0 16px; padding-left: 22px; font-size: 14px; line-height: 1.75; }
+.legal li { margin-bottom: 8px; }
+.legal a { color: var(--color-primary); text-underline-offset: 2px; }
+.legal__updated { margin: 0 0 4px; color: var(--color-text-muted); font-size: 12px; }
+.legal-intro { padding-block: clamp(52px, 8vw, 92px) 8px; }
+.legal-body { padding-block: 24px clamp(60px, 8vw, 100px); }
+.legal-note { margin: 0 0 26px; padding: 14px 16px; border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); background: var(--color-surface); color: var(--color-text-muted); font-size: 13px; line-height: 1.6; }
+
+/* Centred call-to-action button row (404, closing bands) */
+.cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
+
+/* Custom 404 page */
+.notfound { display: grid; min-height: calc(100svh - 88px); place-content: center; padding-block: clamp(60px, 10vw, 110px); text-align: center; }
+.notfound__code { margin: 0; color: var(--color-accent); font-family: var(--font-heading); font-size: clamp(64px, 16vw, 140px); font-style: italic; line-height: 1; letter-spacing: -.03em; }
+.notfound .heading { margin: 18px auto 0; max-width: 560px; }
+.notfound__copy { max-width: 440px; margin: 18px auto 0; color: var(--color-text-muted); font-size: 14px; }
+.notfound__rule { width: 56px; height: 1px; margin: 26px auto 0; background: var(--color-secondary); }
+
+/* Footer legal links */
+.footer-legal { display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: center; }
+.footer-legal a { color: rgb(247 243 232 / 74%); font-size: 10px; text-decoration: none; }
+.footer-legal a:hover { color: #fff; text-decoration: underline; }

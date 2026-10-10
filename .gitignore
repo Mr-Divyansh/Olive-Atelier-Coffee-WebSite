@@ -1,0 +1,10 @@
+# Local working images used only as visual references during asset selection.
+# The live site loads photography from Unsplash URLs, so these are not shipped.
+_picks/
+
+# Temp validation/scratch scripts
+_validate.js
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

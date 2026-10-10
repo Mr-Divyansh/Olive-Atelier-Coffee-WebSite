@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F7F3E8">
+    <meta name="description" content="The Olive Atelier menu concept: a small, seasonal menu of shared plates, honest ingredients and a little something sweet to finish.">
+    <title>Our Menu · Olive Atelier</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="demo-note" role="note"><span aria-hidden="true"></span>A concept demo. Menu, photos and business details are illustrative.</div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="index.html" aria-label="Olive Atelier home">
+          <svg class="wordmark__sprig" viewBox="0 0 48 38" aria-hidden="true"><path d="M8 32C19 25 26 17 39 5M21 22c-9 0-13-4-14-10 7 0 12 3 14 10Zm8-8c0-7 4-11 10-13 1 7-2 11-10 13Zm-5 13c-1-7 2-11 8-14 2 7 0 12-8 14Z"/></svg>
+          <span class="wordmark__name">Olive Atelier</span><span class="wordmark__descriptor">Restaurant &amp; café</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="menu.html" aria-current="page">Menu</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <a class="button button--small button--dark nav-booking" href="index.html#reserve">Book a table <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="story-hero" aria-labelledby="menu-hero-title">
+        <img class="story-hero__image" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1800&auto=format&fit=crop&q=85" alt="A warmly lit dining table set for a shared seasonal meal" fetchpriority="high">
+        <div class="story-hero__veil" aria-hidden="true"></div>
+        <div class="story-hero__content page-wrap">
+          <p class="eyebrow">Our menu</p>
+          <h1 class="heading" id="menu-hero-title">A seasonal table,<br>made to share.</h1>
+          <p>A small, changing menu built around whatever looks best at the market: simple plates, honest ingredients, and a little something sweet to finish.</p>
+          <p class="story-hero__signature">Fresh flavours. &nbsp; Warm hearts.</p>
+        </div>
+      </section>
+
+      <section class="menu-section section-space" aria-labelledby="menu-list-title">
+        <div class="page-wrap">
+          <div class="section-heading"><div><p class="eyebrow">From our kitchen</p><h2 class="heading" id="menu-list-title">A few good things.</h2></div><p class="section-heading__note">An illustrative menu for this concept.<br>Dishes and availability are not confirmed.</p></div>
+          <div class="filter-row" role="group" aria-label="Filter menu dishes">
+            <button class="filter-chip is-active" type="button" data-menu-filter="all" aria-pressed="true">All plates</button>
+            <button class="filter-chip" type="button" data-menu-filter="small" aria-pressed="false">Something small</button>
+            <button class="filter-chip" type="button" data-menu-filter="main" aria-pressed="false">From the kitchen</button>
+            <button class="filter-chip" type="button" data-menu-filter="sweet" aria-pressed="false">A little sweet</button>
+            <button class="filter-chip" type="button" data-menu-filter="drinks" aria-pressed="false">To drink</button>
+          </div>
+          <div class="dish-grid" aria-live="polite">
+            <article class="dish-card" data-menu-category="main"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=850&auto=format&fit=crop&q=80" alt="Fresh pasta tossed with mushrooms, herbs and parmesan" loading="lazy"><span class="dish-card__number" aria-hidden="true">01</span></div><div class="dish-card__details"><div><h3>Truffle mushroom pasta</h3><span class="dish-card__type">From the kitchen</span></div><p>Slow comfort, tangled with mushrooms, herbs and a little parmesan.</p></div></article>
+            <article class="dish-card" data-menu-category="small"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=850&auto=format&fit=crop&q=80" alt="Toasted bread topped with bright greens and seasonal vegetables" loading="lazy"><span class="dish-card__number" aria-hidden="true">02</span></div><div class="dish-card__details"><div><h3>Garden toast</h3><span class="dish-card__type">Something small</span></div><p>Good bread, bright greens and whatever looks lovely at the market.</p></div></article>
+            <article class="dish-card" data-menu-category="main"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=850&auto=format&fit=crop&q=80" alt="A nourishing bowl of greens and grains topped with fresh herbs" loading="lazy"><span class="dish-card__number" aria-hidden="true">03</span></div><div class="dish-card__details"><div><h3>The green bowl</h3><span class="dish-card__type">From the kitchen</span></div><p>A comforting bowl of greens, grains and something gently warming.</p></div></article>
+            <article class="dish-card" data-menu-category="sweet"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=850&auto=format&fit=crop&q=80" alt="A rich chocolate cake with a soft, fudgy centre" loading="lazy"><span class="dish-card__number" aria-hidden="true">04</span></div><div class="dish-card__details"><div><h3>Chocolate cake</h3><span class="dish-card__type">A little sweet</span></div><p>Deep chocolate, a soft middle and no reason to leave the last bite.</p></div></article>
+            <article class="dish-card" data-menu-category="small"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=850&auto=format&fit=crop&q=80" alt="A seasonal plate of roasted tomatoes and fresh herbs" loading="lazy"><span class="dish-card__number" aria-hidden="true">05</span></div><div class="dish-card__details"><div><h3>Tomato &amp; herb plate</h3><span class="dish-card__type">Something small</span></div><p>Slow-roasted tomatoes, good oil and a handful of garden herbs.</p></div></article>
+            <article class="dish-card" data-menu-category="sweet"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=850&auto=format&fit=crop&q=80" alt="A dessert spread with pastries arranged for sharing" loading="lazy"><span class="dish-card__number" aria-hidden="true">06</span></div><div class="dish-card__details"><div><h3>Something sweet to share</h3><span class="dish-card__type">A little sweet</span></div><p>A little spread of pastries to pass around the table.</p></div></article>
+            <article class="dish-card" data-menu-category="drinks"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=850&auto=format&fit=crop&q=80" alt="A freshly brewed coffee served on a café table" loading="lazy"><span class="dish-card__number" aria-hidden="true">07</span></div><div class="dish-card__details"><div><h3>House coffee</h3><span class="dish-card__type">To drink</span></div><p>Carefully brewed and meant to be lingered over.</p></div></article>
+            <article class="dish-card" data-menu-category="drinks"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=850&auto=format&fit=crop&q=80" alt="A tall glass of fresh orange juice with a slice of lemon" loading="lazy"><span class="dish-card__number" aria-hidden="true">08</span></div><div class="dish-card__details"><div><h3>Garden cooler</h3><span class="dish-card__type">To drink</span></div><p>Something fresh and seasonal, pressed from the market.</p></div></article>
+          </div>
+          <p class="menu-disclaimer">Illustrative menu for this concept only. Dishes, ingredients and availability are not confirmed.</p>
+        </div>
+      </section>
+
+      <aside class="story-quote" aria-label="Olive Atelier menu motto">
+        <svg class="story-quote__leaf story-quote__leaf--left" viewBox="0 0 110 120" aria-hidden="true"><path d="M10 115C35 88 56 53 90 6M42 78C25 73 18 62 19 47c16 3 24 12 23 31Zm15-27c1-17 10-28 27-33 0 17-10 29-27 33Zm-7 48c-2-17 5-29 21-38 4 17-3 30-21 38Z"/></svg>
+        <blockquote>“Cook with the season,<br>and the plate takes care of itself.”</blockquote>
+        <p><span></span> Olive Atelier <span></span></p>
+        <svg class="story-quote__leaf story-quote__leaf--right" viewBox="0 0 110 120" aria-hidden="true"><path d="M10 115C35 88 56 53 90 6M42 78C25 73 18 62 19 47c16 3 24 12 23 31Zm15-27c1-17 10-28 27-33 0 17-10 29-27 33Zm-7 48c-2-17 5-29 21-38 4 17-3 30-21 38Z"/></svg>
+      </aside>
+
+      <section class="page-cta page-wrap">
+        <p class="eyebrow"><span></span> Ready when you are</p>
+        <h2 class="heading">Save a seat at the table.</h2>
+        <p>Planning a visit? The reservation demo is still a work in progress, but we’d love to picture you here.</p>
+        <a class="button button--dark" href="index.html#reserve">Find your table <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__main page-wrap">
+        <a class="wordmark wordmark--footer" href="index.html" aria-label="Olive Atelier home"><svg class="wordmark__sprig" viewBox="0 0 48 38" aria-hidden="true"><path d="M8 32C19 25 26 17 39 5M21 22c-9 0-13-4-14-10 7 0 12 3 14 10Zm8-8c0-7 4-11 10-13 1 7-2 11-10 13Zm-5 13c-1-7 2-11 8-14 2 7 0 12-8 14Z"/></svg><span class="wordmark__name">Olive Atelier</span><span class="wordmark__descriptor">Restaurant &amp; café</span></a>
+        <p class="site-footer__thought">Good food. Real people. Always.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></nav>
+      </div>
+      <div class="site-footer__bottom page-wrap"><span>© <span id="current-year">2026</span> Olive Atelier · Concept demo</span><nav class="footer-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a></nav><a href="#main">Back to the beginning ↑</a></div>
+    </footer>
+  </body>
+</html>
+

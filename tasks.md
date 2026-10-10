@@ -27,6 +27,7 @@ Status: `[x]` complete with evidence; `[ ]` pending. The user approved continuin
 - [x] Choose native HTML/CSS/JavaScript for the static two-page prototype; no framework or dependencies needed.
 - [x] Implement semantic, responsive page structure and approved design tokens.
 - [x] Add a dedicated responsive About page based on the supplied latest reference.
+- [x] Add dedicated responsive Menu, Gallery, and Contact pages reusing the shared design system.
 - [x] Verify navigation and no horizontal overflow at 390px and 1440px browser viewports.
 
 ## Phase 4 — Main sections and content
@@ -56,3 +57,16 @@ Status: `[x]` complete with evidence; `[ ]` pending. The user approved continuin
 - [x] Use responsive Unsplash URL parameters, lazy-load below-the-fold images, and add no JS dependencies.
 - [x] Run `node --check js/main.js`; no build or automated-test setup exists.
 - [ ] Review image rights and final content; configure production host and run production performance/accessibility review.
+
+## Hardening pass — website-quality checklist
+
+Actions taken in response to a site-quality/legal review checklist (favicon, legal pages, 404, em dashes, contrast, links, security):
+
+- [x] Add draft [Privacy](./privacy.html), [Terms](./terms.html), and [Refunds](./refunds.html) pages; link them from every footer.
+- [x] Add a custom [404 page](./404.html) and a `.button--outline` style for its light background.
+- [x] Remove em dashes from titles and body copy across all pages (replaced with commas, colons, or full stops).
+- [x] Confirm favicon, unique per-page titles, meta descriptions, dynamic copyright year, clickable logo, and mobile menu are present.
+- [x] Scan HTML/CSS/JS for exposed secrets/keys (none found) and record the security posture in `SECURITY.md`.
+- [x] Verify tag balance, CSS brace balance (415/415), `node --check js/main.js`, and that every internal link resolves.
+- [ ] Have the legal pages reviewed by a qualified advisor and completed with real business details before any public launch.
+- [ ] Add a cookie consent mechanism only if cookies, analytics, or advertising are introduced.
