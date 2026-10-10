@@ -15,6 +15,15 @@ All business facts below are **[PLACEHOLDER — confirm with business]** until a
 | Final CTA | Offer one clear next step appropriate to actual operations. | Book / Order / Contact | Confirmed service and working destination; do not imply unavailable capacity. |
 | Footer | Provide supporting navigation and confirmed contact/social/legal links. | Relevant links | Approved social accounts and applicable policy destinations. |
 
+## About page
+
+- **Story hero:** “More than just a meal.” sets the concept mood. Keep the text concise; do not invent founder, opening, or location history.
+- **Journey section:** describe the proposed hospitality idea, not a factual business journey. All copy is concept language until an operator approves it.
+- **Values:** fresh ingredients, warm hospitality, thoughtful menu, and connection are design themes, not independently verified business promises.
+- **Quote band:** “Food is not just about eating, it’s about creating moments.” is a concept motto attributed to the brand idea, not a customer testimonial.
+- **Gallery:** visual mood references only; identify imagery as stock and replace with authorized venue photos for production.
+- **Contact block:** keep address, phone, email, and location visibly unconfirmed. The map-style panel is a placeholder, not a real map or venue pin.
+
 ## Placeholder handling
 
 In working drafts, use explicit `[PLACEHOLDER — confirm with business: ...]` labels. Do not ship those labels as if factual content. If a visual prototype requires sample menu items, mark them as illustrative demo content in context and replace them before production. Avoid collecting newsletter or booking details until the destination, consent, and data handling are defined.

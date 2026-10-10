@@ -1,6 +1,6 @@
 # Implementation Roadmap
 
-Phase 1 is complete. The user has now approved proceeding with the website concept. The first static prototype covers page structure, sections, and demo interactions; phase status below distinguishes prototype checks from production readiness.
+Phase 1 is complete. The user has approved proceeding with the website concept and supplied a story/about page reference. The static prototype now has home and dedicated About pages; phase status below distinguishes prototype checks from production readiness.
 
 ## Phase 1 — Repository inspection and documentation
 
@@ -26,7 +26,7 @@ Phase 1 is complete. The user has now approved proceeding with the website conce
 - **Deliverables:** responsive structural page with no invented content.
 - **Dependencies:** Phase 2 completion and approval.
 - **Acceptance:** intended reading order and navigation work at mobile, tablet, and desktop; no unintended overflow; implementation uses the selected palette.
-- **Checklist:** [x] Semantic one-page structure, navigation, and responsive layouts implemented. [x] Browser checked at desktop and mobile widths.
+- **Checklist:** [x] Semantic home and dedicated About page structures, navigation, and responsive layouts implemented. [x] Browser checked at desktop and mobile widths.
 - **Status:** Complete for the prototype.
 
 ## Phase 4 — Main sections and content
@@ -35,7 +35,7 @@ Phase 1 is complete. The user has now approved proceeding with the website conce
 - **Deliverables:** populated page sections and recorded assets.
 - **Dependencies:** Phase 3 structure and approved business copy/assets.
 - **Acceptance:** every factual claim is confirmed; demo content is labelled; the page has a clear, useful visitor journey.
-- **Checklist:** [x] Story, demo menu, experience imagery, gallery, visit placeholders, and footer implemented. [x] Demo/business distinction labelled in the page.
+- **Checklist:** [x] Story, menu, experience/gallery, visit placeholders, and footer implemented on home. [x] Story, journey, values, concept motto, gallery, and contact About page implemented. [x] Demo/business distinction labelled.
 - **Status:** Complete for the concept prototype; content requires replacement/approval for a real venue.
 
 ## Phase 5 — Interactions and functionality

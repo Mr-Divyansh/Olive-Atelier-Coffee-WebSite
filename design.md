@@ -58,6 +58,7 @@ Use an editorial serif for display/headings (preferred starting point: **Playfai
 - **Header:** restrained brand wordmark, concise desktop navigation, one clear action if the business can support it. At mobile widths, a clear menu control opens a compact, keyboard-operable navigation.
 - **Hero:** one strong, relevant photograph; short headline and supporting sentence; one primary action and at most one secondary action. Preserve the food/room focal point and ensure copy remains readable.
 - **Story:** editorial text-and-image composition that feels personal without inventing provenance or founder history.
+- **About page:** pair a light story-led image hero with a three-part journey collage; follow with a four-column values strip, a deep-green concept-motto band, varied photo gallery, and practical contact block. Keep all concept copy distinct from claims about a real restaurant.
 - **Menu:** curated set of dishes with image, name, concise description, and price only when confirmed. Use restrained categorization and avoid repetitive floating cards.
 - **Experience:** show atmosphere, ingredients, or hospitality with one considered image/text contrast section; a deep-green band may separate major content.
 - **Gallery:** curated, varied but coherent photographs in a responsive grid; provide an accessible way to inspect them if enlarged interaction is added.

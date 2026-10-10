@@ -57,7 +57,7 @@ Success is evaluated through completion of the acceptance criteria and stakehold
 
 ## Proposed core page sections
 
-Header/navigation, hero, about/story, selected menu, dining experience, curated gallery, location/contact, final action, and footer. Include only sections that help the confirmed business and available content. Testimonials are optional and require verified material.
+The home page covers header/navigation, hero, short story, selected menu, dining experience, curated gallery, demo-only reservation form, visit details, and footer. A dedicated About page provides the long-form story, values, concept motto, gallery, and contact placeholders. Include only sections that help the confirmed business and available content. Testimonials are optional and require verified material.
 
 ## Mobile requirements
 

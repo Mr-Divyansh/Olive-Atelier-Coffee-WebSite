@@ -23,6 +23,7 @@ The supplied desktop and mobile reference boards are visual design references, n
 ## Implemented Demo Experience
 
 - Responsive editorial landing page with Olive Atelier wordmark and mobile navigation.
+- A dedicated [About page](./about.html) based on the latest story-page reference, with a story hero, journey collage, values, concept quote, gallery, and contact section.
 - Food-led hero, story, illustrative menu, atmosphere section, and filterable photo gallery.
 - Demo reservation form with date/time/party-size validation and a clear no-booking-sent notice.
 - Explicit placeholders for unconfirmed location, hours, and contact information.
@@ -58,13 +59,14 @@ The site uses **HTML, CSS, and vanilla JavaScript**. There is no framework, pack
 
 ### Setup Instructions
 
-No installation is required. Open `index.html` in a browser. An internet connection is required for the remote Unsplash image URLs. The page is a static prototype; opening it does not submit or store reservations.
+No installation is required. Open `index.html` or `about.html` in a browser. An internet connection is required for the remote Unsplash image URLs. The site is a static prototype; the reservation demo does not submit or store bookings.
 
 ## Documentation
 
 The following documents define the project requirements and development workflow:
 
 - [PRD.md](./PRD.md) — Product requirements, target users, user journeys, and acceptance criteria.
+- [about.html](./about.html) — standalone Olive Atelier story/about page.
 - [design.md](./design.md) — Visual direction, color palette, typography, responsive rules, and visual QA.
 - [architecture.md](./architecture.md) — Repository findings and proposed application architecture.
 - [phases.md](./phases.md) — Implementation roadmap and phase acceptance criteria.
@@ -99,7 +101,7 @@ Stock photography and other demonstration assets must not be represented as phot
 6. **Phase 6 — Responsive and Accessibility QA:** Test layouts, keyboard navigation, contrast, and interactions.
 7. **Phase 7 — Performance and Final Review:** Optimize assets, verify the build, and complete the final review.
 
-**Current state:** A first responsive concept implementation is in place. It has been previewed at desktop and mobile widths. The JavaScript syntax check and key demo interactions were verified; there is no build or automated test suite in this repository.
+**Current state:** Responsive home and about concept pages are in place. The About page follows the supplied story-page reference. The existing home-page interactions and layout have been checked; there is no build or automated test suite in this repository.
 
 ## Limitations and Next Steps
 

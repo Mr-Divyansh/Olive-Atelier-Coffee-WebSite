@@ -24,13 +24,15 @@ Status: `[x]` complete with evidence; `[ ]` pending. The user approved continuin
 
 ## Phase 3 — Responsive page structure
 
-- [x] Choose native HTML/CSS/JavaScript for the static one-page prototype; no framework or dependencies needed.
+- [x] Choose native HTML/CSS/JavaScript for the static two-page prototype; no framework or dependencies needed.
 - [x] Implement semantic, responsive page structure and approved design tokens.
+- [x] Add a dedicated responsive About page based on the supplied latest reference.
 - [x] Verify navigation and no horizontal overflow at 390px and 1440px browser viewports.
 
 ## Phase 4 — Main sections and content
 
 - [x] Add concept hero, story, illustrative menu, experience/gallery, visit placeholders, and footer.
+- [x] Add the About page story hero, journey imagery, values, concept quote, gallery, and contact placeholders.
 - [x] Clearly label demo menu, stock photography, reservation limits, and unconfirmed business information.
 - [ ] Replace/approve content and imagery for a real venue.
 
@@ -44,6 +46,7 @@ Status: `[x]` complete with evidence; `[ ]` pending. The user approved continuin
 ## Phase 6 — Responsive, accessibility, and visual QA
 
 - [x] Browser-check mobile and desktop widths, navigation, filters, and demo form behavior; verify source URLs respond.
+- [x] Browser-check the dedicated About page at desktop and mobile widths; no horizontal overflow or broken in-page targets.
 - [x] Correct small olive text and control-boundary contrast; document measured palette ratios.
 - [x] Add visible focus and reduced-motion styles.
 - [ ] Complete physical-device, broader assistive-technology, and final production visual QA.

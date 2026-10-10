@@ -45,16 +45,21 @@ configureFilters("[data-menu-filter]", ".dish-card", "menuFilter", "menuCategory
 configureFilters("[data-gallery-filter]", ".gallery-item", "galleryFilter", "galleryCategory");
 
 const bookingDate = document.querySelector('input[name="date"]');
-const today = new Date();
-bookingDate.min = new Date(today.getTime() - today.getTimezoneOffset() * 60_000)
-  .toISOString()
-  .slice(0, 10);
+const bookingForm = document.querySelector("#booking-form");
 
-document.querySelector("#booking-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!event.currentTarget.reportValidity()) return;
-  document.querySelector("#booking-message").textContent =
-    "Thanks for exploring the demo. No reservation was sent or saved.";
-});
+if (bookingDate && bookingForm) {
+  const today = new Date();
+  bookingDate.min = new Date(today.getTime() - today.getTimezoneOffset() * 60_000)
+    .toISOString()
+    .slice(0, 10);
 
-document.querySelector("#current-year").textContent = new Date().getFullYear();
+  bookingForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!event.currentTarget.reportValidity()) return;
+    document.querySelector("#booking-message").textContent =
+      "Thanks for exploring the demo. No reservation was sent or saved.";
+  });
+}
+
+const currentYear = document.querySelector("#current-year");
+if (currentYear) currentYear.textContent = new Date().getFullYear();

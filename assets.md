@@ -18,6 +18,9 @@ The supplied boards define the visual direction, not actual venue photography. T
 | `gallery-warm-room` | Gallery | Warmly lit restaurant interior | [Unsplash image](https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=900&auto=format&fit=crop&q=80) | Image-specific rights not reviewed; check current Unsplash terms before production | Remote; HTTP 200 checked |
 | `gallery-produce` | Gallery | Fresh produce and ingredients | [Unsplash image](https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&auto=format&fit=crop&q=80) | Image-specific rights not reviewed; check current Unsplash terms before production | Remote; HTTP 200 checked |
 | `gallery-table-spread` | Gallery | Shared table spread | [Unsplash image](https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&auto=format&fit=crop&q=80) | Image-specific rights not reviewed; check current Unsplash terms before production | Remote; HTTP 200 checked |
+| `about-story-hero` | About page hero | Warm restaurant interior with plants and timber | [Unsplash image](https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1800&auto=format&fit=crop&q=85) | Image-specific rights not reviewed; check current Unsplash terms before production | Remote; HTTP 200 checked |
+| `about-journey-room` | About page journey | Intimate, leafy café interior | [Unsplash image](https://images.unsplash.com/photo-1497644083578-611b798c60f3?w=1000&auto=format&fit=crop&q=80) | Image-specific rights not reviewed; check current Unsplash terms before production | Remote; HTTP 200 checked |
+| `about-gallery-room` | About page gallery | Warm restaurant interior | [Unsplash image](https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1000&auto=format&fit=crop&q=80) | Image-specific rights not reviewed; check current Unsplash terms before production | Remote; HTTP 200 checked |
 
 ## Use and verification
 
