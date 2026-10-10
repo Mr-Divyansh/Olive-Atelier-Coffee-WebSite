@@ -7,7 +7,7 @@ Olive Atelier is a premium restaurant and café website concept focused on warm 
 The project aims to help a restaurant or café present its atmosphere, showcase its menu, and make it easier for visitors to explore the business, plan a visit, and get in touch.
 
 > **Design direction:** Olive Atelier — Natural Premium  
-> **Project status:** Phase 1 — Documentation  
+> **Project status:** Responsive static concept prototype
 > **Created by:** D Web Studio
 
 ---
@@ -20,19 +20,15 @@ The design uses warm ivory backgrounds, deep forest green accents, muted olive d
 
 The supplied desktop and mobile reference boards are visual design references, not a completed website or verified representation of a real business.
 
-## Planned Features
+## Implemented Demo Experience
 
-- Responsive homepage for desktop, tablet, and mobile.
-- Editorial hero section with food or café photography.
-- About section presenting the restaurant's story.
-- Menu section featuring selected dishes.
-- Image-led gallery highlighting food and ambience.
-- Restaurant location and contact information.
-- Mobile-friendly navigation.
-- Booking, ordering, or contact actions when valid destinations are available.
-- Accessible components and restrained interactions.
+- Responsive editorial landing page with Olive Atelier wordmark and mobile navigation.
+- Food-led hero, story, illustrative menu, atmosphere section, and filterable photo gallery.
+- Demo reservation form with date/time/party-size validation and a clear no-booking-sent notice.
+- Explicit placeholders for unconfirmed location, hours, and contact information.
+- Keyboard focus styling, skip link, reduced-motion support, semantic labels, and responsive layouts.
 
-**Note:** These are planned features. They have not yet been implemented or tested.
+**Important:** This is still a concept, not a verified business website. Dish descriptions, imagery, and the brand story are illustrative. No reservation service, real contact details, or actual venue information is connected.
 
 ## Design System
 
@@ -52,23 +48,17 @@ See [design.md](./design.md) for the complete design specifications.
 
 ## Current Project Status
 
-**Phase 1 — Repository Inspection and Documentation**
+**Prototype implementation**
 
-The repository inspection found no application source code, dependency manifests, or existing implementation.
-
-The project currently contains planning and design documentation only. No working website, build process, or runtime has been verified.
+The initial repository contained documentation only. The current prototype is implemented in `index.html`, `css/styles.css`, and `js/main.js`; it uses native browser technologies and has no package dependencies or build step.
 
 ## Technology Stack
 
-The implementation stack has not yet been selected.
-
-No framework, package manager, runtime, build tool, or environment variables have been confirmed. Technology choices will be made after reviewing the project requirements and deployment constraints.
+The site uses **HTML, CSS, and vanilla JavaScript**. There is no framework, package manager, server, build tool, or environment variable.
 
 ### Setup Instructions
 
-There are currently no verified installation or development commands because the application has not been implemented.
-
-Setup instructions will be added when the actual technology stack is selected and configured.
+No installation is required. Open `index.html` in a browser. An internet connection is required for the remote Unsplash image URLs. The page is a static prototype; opening it does not submit or store reservations.
 
 ## Documentation
 
@@ -109,15 +99,15 @@ Stock photography and other demonstration assets must not be represented as phot
 6. **Phase 6 — Responsive and Accessibility QA:** Test layouts, keyboard navigation, contrast, and interactions.
 7. **Phase 7 — Performance and Final Review:** Optimize assets, verify the build, and complete the final review.
 
-**Current phase:** Phase 1 only. Further implementation requires approval of the documentation phase.
+**Current state:** A first responsive concept implementation is in place. It has been previewed at desktop and mobile widths. The JavaScript syntax check and key demo interactions were verified; there is no build or automated test suite in this repository.
 
 ## Limitations and Next Steps
 
 - Confirm whether Olive Atelier is a fictional demonstration brand or a real client project.
-- Review and approve the project documentation.
-- Select suitable images and verify their sources and usage rights.
-- Choose the implementation stack based on actual project needs.
-- Begin Phase 2 only after explicit approval.
+- Confirm the venue identity and replace all illustrative business details and menu copy.
+- Review the individual Unsplash asset terms and choose whether to retain, replace, or host the photos locally.
+- Connect an approved reservation service only after the venue and booking requirements are known.
+- Run final accessibility and visual QA on target devices before production.
 
 ---
 

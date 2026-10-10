@@ -1,6 +1,6 @@
 # Project Checklist
 
-Status: `[x]` complete with evidence; `[ ]` not started. Phase 1 marks only documentation work actually done in this pass; it does not mean a website is implemented.
+Status: `[x]` complete with evidence; `[ ]` pending. The user approved continuing after Phase 1; the site is a concept prototype, not a verified production site.
 
 ## Phase 1 — Repository inspection and documentation
 
@@ -13,39 +13,43 @@ Status: `[x]` complete with evidence; `[ ]` not started. Phase 1 marks only docu
 - [x] Document AI workflow, project rules, and section content plan.
 - [x] Create an asset inventory that clearly distinguishes unverified candidates from real assets.
 - [x] Cross-check documentation for unsupported claims and consistency.
-- [x] Keep this phase documentation-only; no frontend code, CSS, JavaScript, or page layout created.
+- [x] Keep the original Phase 1 pass documentation-only.
 
-## Phase 2 — Design-system and asset preparation (pending approval)
+## Phase 2 — Design-system and asset preparation
 
-- [ ] Confirm real-client vs fictional-demo identity and approved brand details.
-- [ ] Confirm font availability and delivery/licensing approach.
-- [ ] Select and verify actual image sources, usage rights, and attribution; update `assets.md`.
-- [ ] Resolve business facts and content placeholders.
+- [x] Implement the official palette and documented contrast tokens.
+- [x] Select stock-image URLs, check they return HTTP 200, and record them in `assets.md`.
+- [ ] Review current Unsplash terms and production image-specific usage/attribution rights.
+- [ ] Confirm real-client vs fictional-demo identity, approved content, and font serving approach.
 
-## Phase 3 — Responsive page structure (pending approval)
+## Phase 3 — Responsive page structure
 
-- [ ] Confirm framework, hosting target, and available tooling.
-- [ ] Implement semantic, responsive page structure and approved design tokens.
-- [ ] Verify navigation order and no-overflow layouts at representative sizes.
+- [x] Choose native HTML/CSS/JavaScript for the static one-page prototype; no framework or dependencies needed.
+- [x] Implement semantic, responsive page structure and approved design tokens.
+- [x] Verify navigation and no horizontal overflow at 390px and 1440px browser viewports.
 
-## Phase 4 — Main sections and content (pending approval)
+## Phase 4 — Main sections and content
 
-- [ ] Add approved hero, story, menu, experience/gallery, contact, and footer sections as appropriate.
-- [ ] Verify all facts, image crops, alt text, and any demo labels.
+- [x] Add concept hero, story, illustrative menu, experience/gallery, visit placeholders, and footer.
+- [x] Clearly label demo menu, stock photography, reservation limits, and unconfirmed business information.
+- [ ] Replace/approve content and imagery for a real venue.
 
-## Phase 5 — Interactions and functionality (pending approval)
+## Phase 5 — Interactions and functionality
 
-- [ ] Implement accessible mobile navigation and only confirmed real actions/integrations.
-- [ ] Provide clear feedback and error handling where submissions exist.
-- [ ] Verify every link and control behavior.
+- [x] Implement mobile navigation with accessible state and Escape key support.
+- [x] Implement menu/gallery filters and client-side demo form feedback with no data submission.
+- [x] Verify in-page targets and interactive behavior in the browser.
+- [ ] Connect real booking/contact destinations only after they are provided.
 
-## Phase 6 — Responsive, accessibility, and visual QA (pending approval)
+## Phase 6 — Responsive, accessibility, and visual QA
 
-- [ ] Check mobile, tablet, desktop, keyboard, focus, contrast, semantic structure, and reduced motion.
-- [ ] Resolve findings against `design.md` visual QA checklist.
+- [x] Browser-check mobile and desktop widths, navigation, filters, and demo form behavior; verify source URLs respond.
+- [x] Correct small olive text and control-boundary contrast; document measured palette ratios.
+- [x] Add visible focus and reduced-motion styles.
+- [ ] Complete physical-device, broader assistive-technology, and final production visual QA.
 
-## Phase 7 — Performance optimization and final review (pending approval)
+## Phase 7 — Performance optimization and final review
 
-- [ ] Optimize and verify image delivery and remove unused assets/dependencies.
-- [ ] Run available project checks and report exact results.
-- [ ] Review deployment readiness, content accuracy, privacy/legal requirements, and remaining limitations.
+- [x] Use responsive Unsplash URL parameters, lazy-load below-the-fold images, and add no JS dependencies.
+- [x] Run `node --check js/main.js`; no build or automated-test setup exists.
+- [ ] Review image rights and final content; configure production host and run production performance/accessibility review.

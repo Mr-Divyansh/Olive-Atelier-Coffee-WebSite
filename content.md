@@ -18,3 +18,7 @@ All business facts below are **[PLACEHOLDER — confirm with business]** until a
 ## Placeholder handling
 
 In working drafts, use explicit `[PLACEHOLDER — confirm with business: ...]` labels. Do not ship those labels as if factual content. If a visual prototype requires sample menu items, mark them as illustrative demo content in context and replace them before production. Avoid collecting newsletter or booking details until the destination, consent, and data handling are defined.
+
+## Current concept-page copy
+
+The implemented page uses “Fresh flavours. Warm hearts.” as the design headline and “More than just a meal.” as the story heading. The menu names/descriptions are sample copy to demonstrate layout and filters, not verified dishes or ingredients. A notice at the top of the page identifies the site as a concept demo, and the menu and gallery include nearby image/content disclaimers. Visit details remain clearly marked as unconfirmed. The reservation form only demonstrates browser-side field selection and validation; it sends and saves nothing.

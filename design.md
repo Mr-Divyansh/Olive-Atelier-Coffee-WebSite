@@ -1,7 +1,7 @@
 # Olive Atelier — Design System
 
 **Concept:** Olive Atelier — Natural Premium  
-**Status:** approved visual direction for documentation; not yet implemented  
+**Status:** implemented in the static concept prototype; real-business adaptation is pending
 **Reference:** supplied Olive Atelier desktop identity/site board and mobile screen board
 
 ## Brand and audience
@@ -30,12 +30,13 @@ Suggested semantic tokens for implementation:
 | `--color-on-primary` | `#FFFFFF` | Text/icons on deep forest green, subject to contrast verification |
 | `--color-border` | `#E6E1D6` | Subtle warm divider and form boundary |
 | `--color-text-muted` | `#6B6860` | Secondary text; verify contrast in its actual context |
+| `--color-control-border` | `#8F897A` | Higher-contrast borders for interactive control boundaries; 3:1 minimum against warm ivory |
 
 These additional neutrals support hierarchy; they do not replace or redefine the official five colors. Do not introduce arbitrary hues. Any new color must be documented with a purpose and checked for contrast. Brass is decorative on light backgrounds, not a default text color.
 
 ## Typography
 
-Use an editorial serif for display/headings (preferred starting point: **Playfair Display**) paired with a clean sans serif for body/UI (preferred starting point: **Inter**). These are proposed font choices, not existing dependencies or verified locally installed assets. Before implementation, check availability, licensing/serving approach, and rendering; use a system serif/sans fallback if external font delivery is not appropriate.
+Use an editorial serif for display/headings (preferred starting point: **Playfair Display**) paired with a clean sans serif for body/UI (preferred starting point: **Inter**). The initial static implementation avoids external font dependencies and uses Georgia/system-serif and Avenir/Segoe UI/system-sans fallbacks. This preserves the editorial pairing but may render differently by device; load licensed web fonts only after deciding a production font-serving approach.
 
 - Display/hero: expressive serif, regular or medium weight, controlled line length; scale responsively.
 - Section headings: serif with clear hierarchy, avoid using display sizing everywhere.
@@ -88,6 +89,8 @@ Recompose rather than merely shrink: stack editorial layouts in a deliberate rea
 - Use semantic landmarks and heading order, keyboard-operable controls, visible focus, descriptive names, and useful form instructions.
 - Do not convey status through color alone. Supply text, shape, or icon cues.
 - Check actual text/background combinations against WCAG contrast requirements during implementation; do not assume palette combinations are compliant. In particular, do not use brass for small text on ivory, and verify olive/muted text on light surfaces.
+- The prototype uses primary green for small eyebrow labels because muted olive (`#7A8056`) on ivory has only 3.75:1 contrast. It uses muted text (`#6B6860`) for secondary small text (5.02:1) and a separate `--color-control-border` (`#8F897A`) for control outlines (3.14:1 against ivory); the softer `--color-border` is reserved for non-interactive dividers.
+- The keyboard focus outline is primary green on light surfaces and brass (`#C6A56B`) on deep-green sections. Re-check controls against actual backgrounds if colors or page structure change.
 - Give informative images concise contextual alt text; use empty alt text for decorative imagery.
 - Respect reduced-motion settings and ensure animation does not block content or interaction.
 

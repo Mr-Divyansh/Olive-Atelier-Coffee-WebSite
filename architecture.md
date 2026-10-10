@@ -1,41 +1,38 @@
 # Architecture Notes
 
-## Repository findings
+## Current implementation
 
-At Phase 1 inspection, the project directory contained no files, source code, dependency manifest, framework configuration, tests, or existing documentation. The only confirmed project context is the supplied D Web Studio brief and Olive Atelier reference boards. Therefore there is no existing application architecture or tooling to report.
+The original project directory held documentation only. With approval to create the visual demo, the site was implemented as a static single-page website using native browser technologies. No framework, bundler, server, package manager, third-party runtime dependency, or environment variable is required.
 
-## Proposed boundaries (for a later approved implementation phase)
+| File | Responsibility |
+|---|---|
+| `index.html` | Semantic page structure, sections, text, interactive controls, and image references |
+| `css/styles.css` | Palette tokens, typography fallbacks, responsive layout, component states, and reduced-motion treatment |
+| `js/main.js` | Mobile navigation, menu/gallery filters, demo form validation and feedback, and current footer year |
+| `favicon.svg` | Small Olive Atelier-inspired browser mark |
 
-The simplest suitable starting point is a single-page hospitality website unless confirmed requirements demonstrate a need for multiple routes. Choose the framework, build system, and package manager after the target hosting/deployment and developer constraints are known. Do not preemptively add dependencies.
+## Page composition
 
-Suggested component responsibilities, not existing files:
+The one-page flow is: concept disclosure, navigation, hero, story, illustrative menu, experience imagery, filterable gallery, demo reservation form, unconfirmed visit details, and footer. The header and footer link to in-page section IDs; no router is necessary.
 
-- `SiteHeader` — brand and primary navigation, including accessible mobile open/close behavior.
-- `HeroSection` — proposition, verified image, and primary/secondary destinations.
-- `StorySection` — approved brand copy and imagery.
-- `MenuHighlights` — content-driven menu preview with explicit demo/verified status.
-- `ExperienceSection` and `Gallery` — atmosphere imagery and accessible browsing.
-- `LocationContact` — confirmed business details and working destination links.
-- `SiteFooter` — approved supporting links and legal destinations.
-
-Keep components focused on presentation and interaction. Do not create a generalized design framework for a small brochure site.
+The dishes and supporting prose are concept copy, not confirmed menu or sourcing information. The visit section deliberately uses placeholders instead of invented address/contact/hour data. The reservation form validates date, time, and party size in the browser but sends no request and stores no personal information.
 
 ## Routing
 
-Start with in-page section navigation when a one-page site meets user needs. Introduce separate routes only for a confirmed reason (for example, a substantial menu or policy page). Ensure links and browser navigation remain meaningful.
+Use the existing in-page section navigation while the brochure experience remains single-page. Add a route only if approved production content requires it.
 
 ## Assets and content
 
-Keep approved local images in a clearly named public/static asset directory chosen to match the eventual framework. Maintain a source/license record in [assets.md](./assets.md); use descriptive filenames and avoid storing large originals unnecessarily. Keep business content easy to review and replace, in the simplest structure supported by the chosen stack. Separate verified business facts from sample/demo content.
+The current prototype references remote Unsplash CDN image URLs directly from `index.html`; each URL returned HTTP 200 during verification. No image file has been downloaded locally, and production usage rights/terms still require review and documentation in [assets.md](./assets.md). If approved images are later stored locally, put optimized files under `img/` and update the inventory. Copy and content are in the HTML for this small static demo; keep the demo/factual boundary explicit when replacing it.
 
 ## Styling
 
-Implement the tokens in [design.md](./design.md) using the styling approach already available once a stack is selected. Avoid adding a styling dependency solely by preference. Keep responsive layout and component states explicit and maintainable.
+Tokens and responsive styles are implemented in `css/styles.css`, without a CSS framework. `--color-control-border` is a separate documented contrast-support token for control boundaries; `--color-border` remains the subtle divider color.
 
 ## State and integrations
 
-No client state library or backend is justified for the documented brochure experience. Use local component state only for genuinely interactive behavior such as mobile navigation or a gallery viewer. Booking, ordering, maps, forms, analytics, and newsletter integrations are not confirmed; add none until a real service, destination, privacy purpose, and failure behavior are supplied.
+No client state library or backend is used. Small DOM event handlers in `js/main.js` implement the mobile menu, menu/gallery category filters, and demo-only reservation feedback. Booking, ordering, maps, contact forms, analytics, and newsletter integrations are not connected.
 
 ## Performance and accessibility
 
-Use appropriately sized responsive imagery, lazy-load noncritical below-the-fold images, and avoid unnecessary scripts and animation. Prefer semantic HTML, keyboard-operable controls, visible focus, meaningful alternative text, contrast checks, and reduced-motion handling. Test on actual responsive viewport sizes after implementation.
+Images use responsive CDN parameters and below-the-fold images use native lazy loading. The implementation uses semantic landmarks, accessible navigation state, live filter controls, meaningful image alternatives, visible focus, and reduced-motion support. Desktop and mobile viewport sizes and interactions have been checked in a browser. Individual image rights and production device QA are outstanding.

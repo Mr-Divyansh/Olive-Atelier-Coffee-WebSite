@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F7F3E8">
+    <meta name="description" content="Olive Atelier is a restaurant and café concept exploring seasonal food, warm hospitality, and a slower kind of meal.">
+    <title>Olive Atelier — Good Food, Warm Hearts</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="demo-note" role="note"><span aria-hidden="true"></span>A concept demo — menu, photos and business details are illustrative.</div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="#home" aria-label="Olive Atelier home">
+          <svg class="wordmark__sprig" viewBox="0 0 48 38" aria-hidden="true"><path d="M8 32C19 25 26 17 39 5M21 22c-9 0-13-4-14-10 7 0 12 3 14 10Zm8-8c0-7 4-11 10-13 1 7-2 11-10 13Zm-5 13c-1-7 2-11 8-14 2 7 0 12-8 14Z"/></svg>
+          <span class="wordmark__name">Olive Atelier</span><span class="wordmark__descriptor">Restaurant &amp; café</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+          <a href="#home">Home</a><a href="#story">Our story</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#visit">Visit</a>
+          <a class="button button--small button--dark nav-booking" href="#reserve">Book a table <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <img class="hero__image" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1800&auto=format&fit=crop&q=85" alt="A softly lit restaurant table set for an evening meal" fetchpriority="high">
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__content page-wrap">
+          <p class="eyebrow eyebrow--light"><span></span> Restaurant &amp; café</p>
+          <h1 id="hero-title">Fresh flavours.<br>Warm hearts.</h1>
+          <p class="hero__copy">Seasonal ingredients, thoughtful recipes.<br class="desktop-break"> A little more time around the table.</p>
+          <div class="hero__actions"><a class="button button--light" href="#reserve">Find your table <span aria-hidden="true">↗</span></a><a class="text-link text-link--light" href="#menu">Take a look at the menu <span aria-hidden="true">↓</span></a></div>
+        </div>
+        <div class="hero__caption" aria-hidden="true">A place to slow down</div>
+        <a class="hero__scroll" href="#story" aria-label="Scroll to our story"><span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="intro section-space page-wrap" id="story" aria-labelledby="story-title">
+        <div class="intro__label"><p class="eyebrow">A little about us</p><span class="intro__line" aria-hidden="true"></span></div>
+        <div class="intro__copy">
+          <h2 class="heading heading--large" id="story-title">More than just a meal.</h2>
+          <p class="intro__lead">Good food has a way of bringing people together.</p>
+          <p>Olive Atelier is a restaurant and café concept shaped around seasonal cooking, generous tables, and the simple pleasure of staying a little longer. Think fresh ingredients, familiar comforts, and room for one more at the table.</p>
+          <a class="text-link text-link--dark" href="#visit">A slower kind of gathering <span aria-hidden="true">↗</span></a>
+        </div>
+        <figure class="intro__photo"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&auto=format&fit=crop&q=80" alt="Sunlight falling across the tables of a leafy neighborhood restaurant" loading="lazy"><figcaption>Room for one more.</figcaption></figure>
+        <div class="intro__signature" aria-hidden="true"><svg viewBox="0 0 80 110"><path d="M12 101C36 78 44 51 66 10M34 67C18 64 11 53 10 39c16 3 24 12 24 28Zm8-22c1-17 10-27 26-31 0 17-8 27-26 31Zm-7 41c-3-16 3-28 17-37 5 16 0 29-17 37Z"/></svg></div>
+      </section>
+
+      <section class="menu-section section-space" id="menu" aria-labelledby="menu-title">
+        <div class="page-wrap">
+          <div class="section-heading"><div><p class="eyebrow">From our kitchen</p><h2 class="heading" id="menu-title">A few good things.</h2></div><p class="section-heading__note">A seasonal menu, made to be shared.<br>These dishes are illustrative demo content.</p></div>
+          <div class="filter-row" role="group" aria-label="Filter menu dishes">
+            <button class="filter-chip is-active" type="button" data-menu-filter="all" aria-pressed="true">All plates</button>
+            <button class="filter-chip" type="button" data-menu-filter="small" aria-pressed="false">Something small</button>
+            <button class="filter-chip" type="button" data-menu-filter="main" aria-pressed="false">From the kitchen</button>
+            <button class="filter-chip" type="button" data-menu-filter="sweet" aria-pressed="false">A little sweet</button>
+          </div>
+          <div class="dish-grid" aria-live="polite">
+            <article class="dish-card" data-menu-category="main"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=850&auto=format&fit=crop&q=80" alt="Fresh pasta served with herbs and seasonal vegetables" loading="lazy"><span class="dish-card__number" aria-hidden="true">01</span></div><div class="dish-card__details"><div><h3>Truffle mushroom pasta</h3><span class="dish-card__type">From the kitchen</span></div><p>Slow comfort, tangled with mushrooms, herbs and a little parmesan.</p></div></article>
+            <article class="dish-card" data-menu-category="small"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=850&auto=format&fit=crop&q=80" alt="A colorful seasonal plate with fresh greens and vegetables" loading="lazy"><span class="dish-card__number" aria-hidden="true">02</span></div><div class="dish-card__details"><div><h3>Garden toast</h3><span class="dish-card__type">Something small</span></div><p>Good bread, bright greens and whatever looks lovely at the market.</p></div></article>
+            <article class="dish-card" data-menu-category="main"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=850&auto=format&fit=crop&q=80" alt="A nourishing bowl of soup topped with fresh herbs" loading="lazy"><span class="dish-card__number" aria-hidden="true">03</span></div><div class="dish-card__details"><div><h3>The green bowl</h3><span class="dish-card__type">From the kitchen</span></div><p>A comforting bowl of greens, grains and something gently warming.</p></div></article>
+            <article class="dish-card" data-menu-category="sweet"><div class="dish-card__image"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=850&auto=format&fit=crop&q=80" alt="A rich chocolate cake finished with a dusting of cocoa" loading="lazy"><span class="dish-card__number" aria-hidden="true">04</span></div><div class="dish-card__details"><div><h3>Chocolate cake</h3><span class="dish-card__type">A little sweet</span></div><p>Deep chocolate, a soft middle and no reason to leave the last bite.</p></div></article>
+          </div>
+          <p class="menu-disclaimer">Illustrative menu for this concept only. Dishes, ingredients and availability are not confirmed.</p>
+        </div>
+      </section>
+
+      <section class="experience" aria-labelledby="experience-title">
+        <div class="experience__copy"><p class="eyebrow eyebrow--light">The Olive Atelier feeling</p><h2 class="heading heading--light" id="experience-title">Good food.<br>Better moments.</h2><p>For long lunches, one-more-coffee mornings, and catching up without watching the clock.</p><a class="button button--outline-light" href="#gallery">Take a look around <span aria-hidden="true">↗</span></a></div>
+        <div class="experience__images" aria-label="Scenes from a warm café concept">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop&q=80" alt="A sunlit café interior with warm wood and leafy plants" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=650&auto=format&fit=crop&q=80" alt="A freshly made coffee on a café table" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=650&auto=format&fit=crop&q=80" alt="A table set for a relaxed meal shared with friends" loading="lazy">
+        </div>
+      </section>
+
+      <section class="gallery-section section-space page-wrap" id="gallery" aria-labelledby="gallery-title">
+        <div class="section-heading section-heading--gallery"><div><p class="eyebrow">A little atmosphere</p><h2 class="heading" id="gallery-title">Moments around the table.</h2></div>
+          <div class="filter-row filter-row--gallery" role="group" aria-label="Filter gallery images"><button class="filter-chip is-active" type="button" data-gallery-filter="all" aria-pressed="true">All</button><button class="filter-chip" type="button" data-gallery-filter="food" aria-pressed="false">Food</button><button class="filter-chip" type="button" data-gallery-filter="spaces" aria-pressed="false">Spaces</button></div>
+        </div>
+        <div class="gallery-grid" aria-live="polite">
+          <figure class="gallery-item gallery-item--tall" data-gallery-category="spaces"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1000&auto=format&fit=crop&q=80" alt="A welcoming restaurant interior with tables ready for guests" loading="lazy"><figcaption><span>01</span> The room</figcaption></figure>
+          <figure class="gallery-item" data-gallery-category="food"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900&auto=format&fit=crop&q=80" alt="A freshly prepared meal ready to be shared" loading="lazy"><figcaption><span>02</span> To pass around</figcaption></figure>
+          <figure class="gallery-item" data-gallery-category="spaces"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=900&auto=format&fit=crop&q=80" alt="A warmly lit restaurant interior prepared for guests" loading="lazy"><figcaption><span>03</span> A quiet corner</figcaption></figure>
+          <figure class="gallery-item" data-gallery-category="food"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&auto=format&fit=crop&q=80" alt="Fresh produce and ingredients arranged for a meal" loading="lazy"><figcaption><span>04</span> From the season</figcaption></figure>
+          <figure class="gallery-item gallery-item--wide" data-gallery-category="food"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&auto=format&fit=crop&q=80" alt="A generous spread of food arranged to share around a table" loading="lazy"><figcaption><span>05</span> For sharing</figcaption></figure>
+        </div>
+        <p class="gallery-disclaimer">Stock photography used as visual direction; these images do not depict a verified Olive Atelier venue.</p>
+      </section>
+
+      <section class="reserve-section" id="reserve" aria-labelledby="reserve-title">
+        <div class="reserve-section__inner page-wrap">
+          <div class="reserve-copy"><p class="eyebrow eyebrow--light">When the time feels right</p><h2 class="heading heading--light" id="reserve-title">There’s room<br>at the table.</h2><p>Choose a day and we’ll help you picture the visit. This is a concept demo, so a reservation cannot be sent just yet.</p><div class="reserve-note"><span class="reserve-note__mark" aria-hidden="true">i</span><p>Booking details will be connected once the real venue and reservation service are confirmed.</p></div></div>
+          <form class="booking-form" id="booking-form">
+            <p class="booking-form__eyebrow">Plan a visit <span>Demo only</span></p>
+            <div class="form-grid">
+              <label class="form-field"><span>Date</span><input type="date" name="date" required></label>
+              <label class="form-field"><span>Time</span><select name="time" required><option value="">Choose a time</option><option>11:00</option><option>12:30</option><option>14:00</option><option>17:30</option><option>19:00</option></select></label>
+              <label class="form-field form-field--wide"><span>Party size</span><select name="party" required><option value="">Choose a party size</option><option>1 guest</option><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></label>
+            </div>
+            <button class="button button--form" type="submit">Check this demo <span aria-hidden="true">→</span></button>
+            <p class="form-message" id="booking-message" role="status" aria-live="polite"></p>
+            <p class="booking-form__footnote">No personal details are collected or sent.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="visit-section section-space page-wrap" id="visit" aria-labelledby="visit-title">
+        <div class="visit-intro"><p class="eyebrow">The practical bit</p><h2 class="heading" id="visit-title">Good things,<br>close by.</h2><p>Planning a real visit? We’ll add verified directions and opening hours as soon as the venue details are confirmed.</p></div>
+        <div class="visit-details">
+          <div class="visit-detail"><span class="visit-detail__icon" aria-hidden="true">01</span><div><h3>Find us</h3><p>Venue address to be confirmed</p></div></div>
+          <div class="visit-detail"><span class="visit-detail__icon" aria-hidden="true">02</span><div><h3>Opening hours</h3><p>Hours to be confirmed</p></div></div>
+          <div class="visit-detail"><span class="visit-detail__icon" aria-hidden="true">03</span><div><h3>Get in touch</h3><p>Contact details to be confirmed</p></div></div>
+          <p class="visit-details__note">No address, phone number or booking service has been invented for this demo.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__main page-wrap">
+        <a class="wordmark wordmark--footer" href="#home" aria-label="Olive Atelier home"><svg class="wordmark__sprig" viewBox="0 0 48 38" aria-hidden="true"><path d="M8 32C19 25 26 17 39 5M21 22c-9 0-13-4-14-10 7 0 12 3 14 10Zm8-8c0-7 4-11 10-13 1 7-2 11-10 13Zm-5 13c-1-7 2-11 8-14 2 7 0 12-8 14Z"/></svg><span class="wordmark__name">Olive Atelier</span><span class="wordmark__descriptor">Restaurant &amp; café</span></a>
+        <p class="site-footer__thought">Good food. Real people. Always.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="#story">Story</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#visit">Visit</a></nav>
+      </div>
+      <div class="site-footer__bottom page-wrap"><span>© <span id="current-year">2026</span> Olive Atelier · Concept demo</span><a href="#home">Back to the beginning ↑</a></div>
+    </footer>
+  </body>
+</html>

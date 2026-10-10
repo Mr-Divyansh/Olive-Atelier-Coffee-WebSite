@@ -1,7 +1,7 @@
 # Product Requirements Document
 
 **Product:** Olive Atelier restaurant and café website demo  
-**Status:** Draft for a concept demo; business details are unconfirmed  
+**Status:** Static concept prototype implemented; business details remain unconfirmed
 **Owner/context:** D Web Studio brief and supplied visual references
 
 ## Problem and opportunity
