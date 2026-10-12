@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Olive Atelier about-strip probe</title>
+</head>
+<body>
+<pre id="out">running</pre>
+<script>
+(function () {
+  const results = [];
+  function scan(width) {
+    return new Promise(res => {
+      const f = document.createElement("iframe");
+      f.style.cssText = "position:absolute;left:-6000px;top:0;width:" + width + "px;height:5200px;border:0;visibility:hidden";
+      f.src = "../about.html";
+      document.body.appendChild(f);
+      const t0 = Date.now();
+      const tick = () => {
+        const ready = f.contentDocument && f.contentDocument.readyState !== "loading";
+        if (!ready && Date.now() - t0 < 8000) return void setTimeout(tick, 200);
+        setTimeout(() => {
+          const d = f.contentDocument;
+          const grid = d.querySelector(".about-gallery__grid");
+          const gb = grid.getBoundingClientRect();
+          const cs = d.defaultView.getComputedStyle(grid);
+          const items = [...d.querySelectorAll(".about-gallery__item")].map((e, i) => {
+            const b = e.getBoundingClientRect();
+            const s = d.defaultView.getComputedStyle(e);
+            return { i, cls: e.className.replace("about-gallery__item", "it").trim(), x: Math.round(b.x - gb.x), y: Math.round(b.y - gb.y),
+                     w: Math.round(b.width), h: Math.round(b.height), gr: s.gridRow, gc: s.gridColumn };
+          });
+          results.push({ width, grid: { w: Math.round(gb.width), h: Math.round(gb.height), cols: cs.gridTemplateColumns, rows: cs.gridTemplateRows, flow: cs.gridAutoFlow }, items });
+          f.remove();
+          res();
+        }, 700);
+      };
+      tick();
+    });
+  }
+  (async () => {
+    for (const w of [1440, 390]) await scan(w);
+    document.getElementById("out").textContent = "@@RESULTS@@" + JSON.stringify(results) + "@@END@@";
+    document.title = "probe-done";
+  })();
+})();
+</script>
+</body>
+</html>

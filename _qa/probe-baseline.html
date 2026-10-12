@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Olive Atelier layout probe</title>
+</head>
+<body>
+<pre id="out">running</pre>
+<script>
+const BASE = "../";
+const PAGES = ["index", "about", "menu", "gallery", "contact", "privacy", "terms", "refunds", "404"];
+const WIDTHS = [1440, 1024, 768, 390];
+const results = [];
+
+function rect(d, sel) {
+  const e = d.querySelector(sel);
+  if (!e) return null;
+  const b = e.getBoundingClientRect();
+  return { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.width), h: Math.round(b.height),
+           r: Math.round(b.right), b: Math.round(b.bottom) };
+}
+function style(d, sel, props) {
+  const e = d.querySelector(sel);
+  if (!e) return null;
+  const cs = d.defaultView.getComputedStyle(e);
+  const o = {};
+  props.forEach(p => o[p] = cs.getPropertyValue(p));
+  return o;
+}
+function loadFrame(page, w) {
+  return new Promise(res => {
+    const f = document.createElement("iframe");
+    f.style.cssText = "position:absolute;left:-6000px;top:0;width:" + w + "px;height:5200px;border:0;visibility:hidden";
+    f.src = BASE + page + ".html";
+    let done = false;
+    const finish = () => { if (!done) { done = true; setTimeout(() => res(f), 500); } };
+    f.onload = finish;
+    f.onerror = () => { if (!done) { done = true; res(null); } };
+    document.body.appendChild(f);
+    setTimeout(finish, 7000);
+  });
+}
+function galleryCoverage(d) {
+  const grid = d.querySelector(".gallery-grid");
+  if (!grid) return null;
+  const gb = grid.getBoundingClientRect();
+  const all = [...grid.querySelectorAll(".gallery-item")];
+  const items = all.filter(e => d.defaultView.getComputedStyle(e).display !== "none");
+  let area = 0;
+  const rects = items.map(e => { const b = e.getBoundingClientRect(); area += b.width * b.height;
+    return { x: Math.round(b.x - gb.x), y: Math.round(b.y - gb.y), w: Math.round(b.width), h: Math.round(b.height) }; });
+  const gridArea = gb.width * gb.height;
+  const xs = [...new Set(rects.map(r => r.x))].sort((a, b) => a - b);
+  const ys = [...new Set(rects.map(r => r.y))].sort((a, b) => a - b);
+  return { gridW: Math.round(gb.width), gridH: Math.round(gb.height), visible: items.length,
+           hidden: all.length - items.length,
+           cols: xs.length, rows: ys.length, holePct: Math.round((1 - area / gridArea) * 100),
+           colsWidths: xs.map((x, i) => i < xs.length - 1 ? xs[i + 1] - x : Math.round(gb.width) - x),
+           rowHeights: ys.map((y, i) => i < ys.length - 1 ? ys[i + 1] - y : Math.round(gb.height) - y) };
+}
+async function measure(frame, page, w) {
+  const d = frame.contentDocument;
+  const out = { page, w };
+  out.overflow = d.documentElement.scrollWidth - d.documentElement.clientWidth;
+  out.wideEls = [...d.querySelectorAll("body *")].filter(e => {
+    const b = e.getBoundingClientRect();
+    return b.width > 0 && (b.right > frame.clientWidth + 1.5 || b.left < -1.5);
+  }).slice(0, 6).map(e => (e.tagName + "." + (e.className || "?")).slice(0, 60) + " r=" + Math.round(e.getBoundingClientRect().right));
+  const wraps = [...d.querySelectorAll(".page-wrap, .site-header__inner")].map(e => e.getBoundingClientRect());
+  out.containers = { lefts: [...new Set(wraps.map(b => Math.round(b.x)))],
+                     rights: [...new Set(wraps.map(b => Math.round(b.right)))],
+                     widths: [...new Set(wraps.map(b => Math.round(b.width)))] };
+  out.type = {
+    h1: style(d, "h1", ["font-size", "line-height"]),
+    h2: style(d, "main h2, .legal h2, .notfound h2", ["font-size", "line-height"]),
+    eyebrow: style(d, ".eyebrow", ["font-size", "letter-spacing"]),
+    body: style(d, "main p", ["font-size", "line-height"]),
+    nav: style(d, ".primary-nav > a:not(.button)", ["font-size"]),
+    button: style(d, ".button", ["font-size", "min-height"]),
+    caption: style(d, ".gallery-item figcaption, .dish-card__details p", ["font-size"])
+  };
+  return out;
+}
+  if (page === "index") {
+    out.intro = { section: rect(d, ".intro"), label: rect(d, ".intro__label"), heading: rect(d, "#story-title"),
+                  lead: rect(d, ".intro__lead"), para: rect(d, ".intro__copy > p:not(.intro__lead)"),
+                  link: rect(d, ".intro__copy > .text-link"), photo: rect(d, ".intro__photo") };
+    const i = out.intro;
+    if (i.label && i.heading && i.lead && i.para && i.link && i.photo) {
+      i.labelX = i.label.x; i.headingX = i.heading.x;
+      i.headingToLeadGap = i.lead.y - i.heading.b;
+      i.leadToParaGap = i.para.y - i.lead.b;
+      i.paraToLinkGap = i.link.y - i.para.b;
+      i.photoVsTextTop = i.photo.y - i.heading.y;
+      i.photoVsTextBottom = i.photo.b - i.link.b;
+    }
+  }
+  if (page === "index" || page === "gallery") {
+    out.gallery = galleryCoverage(d);
+    out.headingRow = { block: rect(d, ".section-heading--gallery"),
+                       left: rect(d, ".section-heading--gallery > div:first-child"),
+                       filters: rect(d, ".filter-row--gallery"), chip: rect(d, ".filter-chip") };
+    if (out.headingRow.block && out.headingRow.filters && out.headingRow.left)
+      out.headingRow.filterGapFromHeading = out.headingRow.filters.x - out.headingRow.left.r;
+  }
+  if (page === "menu") {
+    out.dishGrid = rect(d, ".dish-grid"); out.dishCard = rect(d, ".dish-card");
+    out.filters = rect(d, ".filter-row");
+  }
+  if (page === "about") {
+    out.aboutStrip = { heading: rect(d, ".about-gallery__heading"), grid: rect(d, ".about-gallery__grid") };
+    const g = rect(d, ".about-gallery__grid");
+    if (g) {
+      const items = [...d.querySelectorAll(".about-gallery__item")].filter(e => d.defaultView.getComputedStyle(e).display !== "none");
+      let a = 0; items.forEach(e => { const b = e.getBoundingClientRect(); a += b.width * b.height; });
+      out.aboutStrip.holePct = Math.round((1 - a / (g.w * g.h)) * 100);
+      out.aboutStrip.visible = items.length;
+    }
+  }
+  // interactions
+  out.interactions = {};
+  const gChip = d.querySelector("[data-gallery-filter='food']");
+  if (gChip) {
+    const vis = () => [...d.querySelectorAll(".gallery-item")].filter(e => d.defaultView.getComputedStyle(e).display !== "none").length;
+    const before = vis(); gChip.click(); const after = vis();
+    out.interactions.galleryFilter = { before, after };
+    d.querySelector("[data-gallery-filter='all']").click();
+  }
+  const mChip = d.querySelector("[data-menu-filter]");
+  if (mChip && mChip.nextElementSibling) {
+    const vis = () => [...d.querySelectorAll(".dish-card")].filter(e => d.defaultView.getComputedStyle(e).display !== "none").length;
+    const before = vis(); mChip.nextElementSibling.click(); const after = vis();
+    out.interactions.menuFilter = { before, after };
+    mChip.click();
+  }
+  if (w <= 760) {
+    const t = d.querySelector(".menu-toggle");
+    if (t) { t.click();
+      out.interactions.mobileNav = { open: d.querySelector(".primary-nav").classList.contains("is-open"),
+                                      expanded: t.getAttribute("aria-expanded") };
+      t.click(); }
+  }
+  const date = d.querySelector('input[name="date"]');
+  if (date) out.interactions.dateMin = date.min || "(empty)";
+  const mh = d.querySelector("main h1, main h2");
+  if (mh) out.headingLines = { text: mh.textContent.trim().slice(0, 40),
+                               lineH: Math.round(mh.getBoundingClientRect().height),
+                               lh: parseFloat(d.defaultView.getComputedStyle(mh).lineHeight) };
+  return out;
+}
+(async () => {
+  for (const page of PAGES) {
+    for (const w of WIDTHS) {
+      const f = await loadFrame(page, w);
+      if (!f || !f.contentDocument) { results.push({ page, w, error: "load failed" }); continue; }
+      try { results.push(await measure(f, page, w)); }
+      catch (e) { results.push({ page, w, error: String(e) }); }
+      f.remove();
+    }
+  }
+  document.getElementById("out").textContent = "@@RESULTS@@" + JSON.stringify(results) + "@@END@@";
+  document.title = "probe-done";
+})();
+</script>
+
+
+</body></html>
