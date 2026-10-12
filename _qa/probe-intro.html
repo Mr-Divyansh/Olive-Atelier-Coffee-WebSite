@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Olive Atelier intro probe</title>
+</head>
+<body>
+<pre id="out">running</pre>
+<script>
+(function () {
+  const results = [];
+  function scan(width) {
+    return new Promise(res => {
+      const f = document.createElement("iframe");
+      f.style.cssText = "position:absolute;left:-6000px;top:0;width:" + width + "px;height:5200px;border:0;visibility:hidden";
+      f.src = "../index.html";
+      document.body.appendChild(f);
+      const t0 = Date.now();
+      const tick = () => {
+        const ready = f.contentDocument && f.contentDocument.readyState !== "loading";
+        if (!ready && Date.now() - t0 < 8000) return void setTimeout(tick, 200);
+        setTimeout(() => {
+          const d = f.contentDocument;
+          const intro = d.querySelector(".intro");
+          const cs = d.defaultView.getComputedStyle(intro);
+          const R = e => { if (!e) return null; const b = e.getBoundingClientRect(); return { y: Math.round(b.y), h: Math.round(b.height), x: Math.round(b.x), w: Math.round(b.width) }; };
+          const h2 = d.querySelector("#story-title");
+          const h2s = d.defaultView.getComputedStyle(h2);
+          results.push({
+            width,
+            grid: { cols: cs.gridTemplateColumns, rows: cs.gridTemplateRows, gap: cs.rowGap + ' / ' + cs.columnGap, areas: cs.gridTemplateAreas },
+            label: R(d.querySelector(".intro__label")),
+            copy: R(d.querySelector(".intro__copy")),
+            h2: { ...R(h2), marginTop: h2s.marginTop, paddingTop: h2s.paddingTop },
+            lead: R(d.querySelector(".intro__lead")),
+            photo: R(d.querySelector(".intro__photo"))
+          });
+          f.remove();
+          res();
+        }, 600);
+      };
+      tick();
+    });
+  }
+  (async () => {
+    for (const w of [1440, 1024, 768, 390]) await scan(w);
+    document.getElementById("out").textContent = "@@RESULTS@@" + JSON.stringify(results) + "@@END@@";
+    document.title = "probe-done";
+  })();
+})();
+</script>
+</body>
+</html>
