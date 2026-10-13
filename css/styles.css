@@ -203,14 +203,14 @@ p { text-wrap: pretty; }
 .reserve-note { display: flex; max-width: 400px; align-items: start; gap: 12px; padding-top: 17px; border-top: 1px solid rgb(247 243 232 / 20%); }
 .reserve-note__mark { display: grid; width: 20px; height: 20px; flex: 0 0 auto; place-items: center; border: 1px solid var(--color-accent); border-radius: 50%; color: #ead9b8; font-family: var(--font-heading); font-size: 12px; font-style: italic; }
 .reserve-note p { margin: -1px 0 0; color: rgb(247 243 232 / 78%); font-size: var(--text-caption); line-height: 1.6; }
-.booking-form { padding: clamp(25px, 4vw, 42px); background: var(--color-background); color: var(--color-text); }
+.booking-form { padding: clamp(25px, 4vw, 42px); background: var(--color-background); color: var(--color-text); box-shadow: 0 26px 54px rgb(0 0 0 / 30%); }
 .booking-form__eyebrow { display: flex; align-items: center; justify-content: space-between; margin: 0 0 22px; color: var(--color-primary); font-family: var(--font-heading); font-size: 21px; }
 .booking-form__eyebrow span { padding: 5px 9px; border: 1px solid var(--color-border); color: var(--color-text-muted); font-family: var(--font-body); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .form-field { display: grid; min-width: 0; gap: 6px; color: var(--color-text); font-size: var(--text-label); font-weight: 600; }
 .form-field--wide { grid-column: 1 / -1; }
 .form-field input, .form-field select { width: 100%; min-height: 48px; padding: 0 12px; border: 1px solid var(--color-control-border); border-radius: 2px; background: var(--color-surface); color: var(--color-text); font-size: 14.5px; }
-.form-field input:focus-visible, .form-field select:focus-visible { border-color: var(--color-primary); }
+.form-field input:focus-visible, .form-field select:focus-visible { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgb(36 56 44 / 14%); }
 .form-field textarea { width: 100%; min-height: 120px; padding: 12px; border: 1px solid var(--color-control-border); border-radius: 2px; background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); font-size: 14.5px; line-height: 1.55; resize: vertical; }
 .form-field textarea:focus-visible { border-color: var(--color-primary); }
 .button--form { width: 100%; min-height: 48px; margin-top: 18px; background: var(--color-primary); color: white; cursor: pointer; }
