@@ -1,0 +1,1 @@
+@@RESULTS@@jsClass=false || reveal=0 || gItems=0 || lbExists=false || gRole=x || lbOpen=noLB || ovf= || cap1=noCap || cap2= || afterClose=noLB || ovf2=empty@@END@@

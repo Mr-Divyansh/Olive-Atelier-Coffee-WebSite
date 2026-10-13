@@ -1,0 +1,1 @@
+@@RESULTS@@{"playfair_n400":true,"playfair_i400":true,"inter_n400":true,"inter_n700":true,"loaded":[],"captionFont":"\"Playfair Display\", \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", Georgia, serif","captionStyle":"italic"}@@END@@

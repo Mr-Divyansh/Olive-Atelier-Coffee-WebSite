@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><title>feat</title></head><body style="margin:0">
+<iframe id="f" src="../gallery.html" style="position:absolute;left:-6000px;top:0;width:1440px;height:900px;border:0"></iframe>
+<pre id="out">running</pre>
+<script>
+const O=document.getElementById("out");
+window.addEventListener("error", e=>{O.textContent+=" || PARENTERR "+e.message;document.title="probe-done";});
+const f=document.getElementById("f");
+function waitWin(){return new Promise(res=>{const t=()=>{try{if(f.contentWindow&&f.contentWindow.document&&f.contentWindow.document.readyState!=="loading"){return res(f.contentWindow);}}catch(e){}setTimeout(t,200);};t();});}
+(async()=>{
+ const w=await waitWin(); const d=w.document;
+ await new Promise(r=>setTimeout(r,1000));
+ const L=[]; const log=s=>{L.push(s);O.textContent=L.join(" || ");};
+ log("jsClass="+d.documentElement.classList.contains("js"));
+ log("reveal="+d.querySelectorAll("[data-reveal]").length);
+ log("gItems="+d.querySelectorAll(".gallery-item").length);
+ log("lbExists="+!!d.querySelector(".lightbox"));
+ const gi=d.querySelector(".gallery-item");
+ log("gRole="+(gi?gi.getAttribute("role"):"x"));
+ if(gi) gi.click();
+ await new Promise(r=>setTimeout(r,450));
+ const lb=d.querySelector(".lightbox");
+ log("lbOpen="+(lb?lb.classList.contains("is-open"):"noLB"));
+ log("ovf="+d.body.style.overflow);
+ const cap=d.querySelector(".lightbox__caption");
+ log("cap1="+(cap?cap.textContent.trim().slice(0,16):"noCap"));
+ const nx=d.querySelector(".lightbox__nav--next");
+ if(nx) nx.click();
+ await new Promise(r=>setTimeout(r,250));
+ log("cap2="+((d.querySelector(".lightbox__caption")||{textContent:""}).textContent.trim().slice(0,16)));
+ const cl=d.querySelector(".lightbox__close");
+ if(cl) cl.click();
+ await new Promise(r=>setTimeout(r,400));
+ log("afterClose="+(d.querySelector(".lightbox")?d.querySelector(".lightbox").classList.contains("is-open"):"noLB"));
+ log("ovf2="+(d.body.style.overflow||"empty"));
+ O.textContent="@@RESULTS@@"+L.join(" || ")+"@@END@@";
+ document.title="probe-done";
+})().catch(e=>{O.textContent="@@RESULTS@@ERR "+String(e&&e.stack||e)+"@@END@@";document.title="probe-done";});
+</script></body></html>

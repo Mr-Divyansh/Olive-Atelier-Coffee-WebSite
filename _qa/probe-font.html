@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Olive Atelier font probe</title></head>
+<body>
+<pre id="out">running</pre>
+<script>
+(function(){
+  var f=document.createElement("iframe");
+  f.style.cssText="position:absolute;left:-6000px;top:0;width:1440px;height:900px;border:0;visibility:hidden";
+  f.src="../index.html";
+  document.body.appendChild(f);
+  function done(){
+    var d=f.contentDocument, w=d.defaultView;
+    d.fonts.ready.then(function(){
+      var cap=d.querySelector(".hero__caption");
+      var cs=cap?w.getComputedStyle(cap):{};
+      var out={
+        playfair_n400:d.fonts.check("16px 'Playfair Display'"),
+        playfair_i400:d.fonts.check("italic 16px 'Playfair Display'"),
+        inter_n400:d.fonts.check("16px Inter"),
+        inter_n700:d.fonts.check("700 16px Inter"),
+        loaded:[].slice.call(d.fonts).filter(function(x){return x.status==="loaded";}).map(function(x){return x.family+":"+x.weight+":"+x.style;}),
+        captionFont:cs.fontFamily, captionStyle:cs.fontStyle
+      };
+      document.getElementById("out").textContent="@@RESULTS@@"+JSON.stringify(out)+"@@END@@";
+      document.title="probe-done";
+    });
+  }
+  var t0=Date.now();
+  function tick(){
+    var ready=f.contentDocument&&f.contentDocument.readyState!=="loading";
+    if(!ready&&Date.now()-t0<8000)return void setTimeout(tick,200);
+    setTimeout(done,500);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>
