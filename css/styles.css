@@ -241,7 +241,7 @@ p { text-wrap: pretty; }
 .footer-nav a { color: rgb(247 243 232 / 90%); font-size: 12.5px; }
 .footer-nav a::after { background: var(--color-accent); }
 .site-footer__bottom { display: flex; min-height: 55px; align-items: center; justify-content: space-between; border-top: 1px solid rgb(247 243 232 / 20%); color: rgb(247 243 232 / 80%); font-size: 11.5px; }
-.site-footer__bottom a { text-decoration: none; }
+.site-footer__bottom a { text-decoration: none; transition: color 180ms ease; }
 .site-footer__bottom a:hover { color: white; }
 @keyframes appear { from { transform: translateY(6px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
