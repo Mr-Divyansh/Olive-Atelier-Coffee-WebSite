@@ -98,7 +98,7 @@ p { text-wrap: pretty; }
 .hero { position: relative; display: flex; min-height: clamp(560px, 50vw, 710px); align-items: center; overflow: hidden; background: #35392e; color: white; }
 .hero__image, .hero__shade { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero__image { object-fit: cover; object-position: center 56%; }
-.hero__shade { background: linear-gradient(90deg, rgb(12 19 14 / 72%), rgb(12 19 14 / 47%) 38%, rgb(12 19 14 / 10%) 76%), linear-gradient(0deg, rgb(12 19 14 / 27%), transparent 40%); }
+.hero__shade { background: linear-gradient(100deg, rgb(16 22 17 / 68%) 0%, rgb(16 22 17 / 52%) 28%, rgb(16 22 17 / 27%) 52%, rgb(16 22 17 / 8%) 74%, transparent 100%), linear-gradient(0deg, rgb(16 22 17 / 46%) 0%, rgb(16 22 17 / 16%) 26%, transparent 54%); }
 .hero__content { position: relative; z-index: 1; padding-top: 24px; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--color-primary); font-size: var(--text-eyebrow); font-weight: 700; letter-spacing: var(--tracking-eyebrow); line-height: 1.4; text-transform: uppercase; }
 .eyebrow--light { color: #e5d5b5; }
@@ -272,7 +272,7 @@ p { text-wrap: pretty; }
   .primary-nav .nav-booking { align-self: start; margin-top: 16px; }
   .hero { min-height: max(540px, min(710px, calc(100svh - 100px))); align-items: end; padding-bottom: 100px; }
   .hero__image { object-position: 58% center; }
-  .hero__shade { background: linear-gradient(0deg, rgb(12 19 14 / 75%), rgb(12 19 14 / 30%) 58%, rgb(12 19 14 / 10%)), linear-gradient(90deg, rgb(12 19 14 / 19%), transparent); }
+  .hero__shade { background: linear-gradient(0deg, rgb(16 22 17 / 74%), rgb(16 22 17 / 42%) 44%, rgb(16 22 17 / 12%) 74%, transparent), linear-gradient(90deg, rgb(16 22 17 / 24%), transparent 72%); }
   .hero__content { padding-top: 0; }
   .hero__copy { max-width: 360px; margin: 16px 0 24px; font-size: 15px; }
   .desktop-break { display: none; }
