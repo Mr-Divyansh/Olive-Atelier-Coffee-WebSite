@@ -19,8 +19,8 @@
   --color-text-muted: #5F5B51;
 
   /* Type families -- editorial serif headings, clean sans body */
-  --font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --font-body: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-heading: "Playfair Display", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Inter", "Avenir Next", Avenir, "Segoe UI", sans-serif;
 
   /* Type scale */
   --text-display: clamp(44px, 5.6vw, 76px);      /* home hero headline */
