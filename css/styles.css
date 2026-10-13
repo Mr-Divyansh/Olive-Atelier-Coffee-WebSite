@@ -390,9 +390,10 @@ p { text-wrap: pretty; }
 .about-gallery__heading > p { max-width: 300px; margin: 0; color: var(--color-text-muted); font-size: var(--text-body-sm); line-height: 1.55; }
 .about-gallery__heading .text-link { margin-bottom: 4px; }
 .about-gallery__grid { display: grid; grid-auto-flow: dense; grid-template-columns: 1.22fr .75fr .75fr 1.12fr; grid-template-rows: 108px 108px; gap: 8px; }
-.about-gallery__item { min-width: 0; overflow: hidden; background: #e6e1d6; }
+.about-gallery__item { min-width: 0; overflow: hidden; background: #e6e1d6; box-shadow: 0 8px 20px rgb(36 56 44 / 8%); transition: box-shadow 320ms ease; }
 .about-gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform 450ms ease; }
 .about-gallery__item:hover img { transform: scale(1.035); }
+.about-gallery__item:hover { box-shadow: 0 16px 36px rgb(36 56 44 / 14%); }
 .about-gallery__item--room { grid-row: span 2; }
 .about-gallery__item--room:last-child { grid-row: auto; }
 .about-gallery__item--wide { grid-column: span 2; }
