@@ -269,7 +269,7 @@ p { text-wrap: pretty; }
   .demo-note { min-height: 28px; font-size: 10.5px; }
   .wordmark__name { font-size: 22px; }
   .wordmark__descriptor { font-size: 9px; }
-  .menu-toggle { display: flex; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--color-control-border); border-radius: 50%; background: transparent; cursor: pointer; }
+  .menu-toggle { display: flex; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--color-control-border); border-radius: 50%; background: transparent; cursor: pointer; transition: transform 140ms ease; }
   .menu-toggle span { width: 17px; height: 1px; background: var(--color-primary); transition: transform 180ms ease; }
   .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
   .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
@@ -560,4 +560,35 @@ p { text-wrap: pretty; }
   .js [data-reveal] { opacity: 1 !important; transform: none !important; }
   .lightbox, .lightbox__close, .lightbox__nav { transition-duration: .01ms !important; }
 }
+
+/* ==========================================================================
+   Touch feedback -- tap response + no iOS highlight box.
+   Scoped to (hover: none) so desktop hover behaviour is completely untouched.
+   ========================================================================== */
+@media (hover: none) {
+  a, button, .filter-chip, .gallery-item, .dish-card, .about-gallery__item,
+  .value-item, .contact-band__details > div, .wordmark {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Kill the 300ms tap delay and stop long-press text selection on controls. */
+  a, button, .filter-chip, .menu-toggle, .gallery-item, .dish-card,
+  .about-gallery__item, .text-link {
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  /* Suppress the desktop lift on tap; use a crisp press instead. */
+  .button:active { transform: translateY(0) scale(.98); }
+  .button--dark:active, .button--form:active, .button--outline:active,
+  .button--outline-light:active, .nav-booking:active { transform: translateY(0) scale(.98); }
+  .filter-chip:active { transform: scale(.96); }
+  .menu-toggle:active { transform: scale(.92); }
+  .gallery-item:active, .dish-card:active, .about-gallery__item:active { transform: scale(.99); }
+  .dish-card__image:active, .gallery-item:active img { transform: scale(1.01); }
+  .text-link:active span { transform: translateX(3px); }
+  .primary-nav > a:not(.button):active { color: var(--color-primary); }
+  .wordmark:active .wordmark__sprig { transform: rotate(-6deg); }
+  .contact-band__details > div:active .contact-band__details > div > span { color: var(--color-accent); border-color: var(--color-accent); }
+}
+
 
