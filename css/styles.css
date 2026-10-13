@@ -137,7 +137,7 @@ p { text-wrap: pretty; }
 .intro__photo::after { position: absolute; z-index: -1; right: 0; bottom: 0; width: 70%; height: 70%; background: #ece5d3; content: ""; }
 .intro__photo img { width: 100%; height: clamp(280px, 32vw, 420px); object-fit: cover; }
 .intro__photo figcaption { position: absolute; right: 28px; bottom: 26px; color: white; font-family: var(--font-heading); font-size: 15px; font-style: italic; text-shadow: 0 1px 12px rgb(0 0 0 / 55%); }
-.intro__signature { position: absolute; right: 31%; bottom: 14%; width: 54px; transform: rotate(10deg); opacity: .74; }
+.intro__signature { width: 52px; margin-top: 26px; transform: rotate(-8deg); opacity: .8; }
 .intro__signature svg { fill: none; stroke: var(--color-secondary); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.2; }
 
 /* Menu section */
