@@ -1,0 +1,1 @@
+@@RESULTS@@{"docH":5230,"footTop":5059,"footRect":{"x":100,"y":5059,"w":175,"h":41},"display":"grid","cols":"27px 136.547px"}@@END@@

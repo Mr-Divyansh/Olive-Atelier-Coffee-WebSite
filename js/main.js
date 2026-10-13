@@ -68,3 +68,12 @@ document.querySelectorAll("form[data-demo-form]").forEach((form) => {
 
 const currentYear = document.querySelector("#current-year");
 if (currentYear) currentYear.textContent = new Date().getFullYear();
+
+const siteHeader = document.querySelector(".site-header");
+if (siteHeader) {
+  const setHeaderState = () => {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+  setHeaderState();
+  window.addEventListener("scroll", setHeaderState, { passive: true });
+}

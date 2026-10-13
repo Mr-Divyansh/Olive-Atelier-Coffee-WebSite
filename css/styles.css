@@ -73,12 +73,14 @@ p { text-wrap: pretty; }
 .demo-note span { width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: var(--color-accent); }
 
 /* Header & navigation -- aligned to the same 1240px content grid */
-.site-header { position: relative; z-index: 10; background: var(--color-background); }
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--color-background); transition: box-shadow 240ms ease; }
+.site-header.is-scrolled { box-shadow: 0 8px 26px rgb(36 56 44 / 9%); }
 .site-header__inner { display: flex; width: min(var(--page-width), calc(100% - (var(--page-gutter) * 2))); min-height: var(--header-height); align-items: center; justify-content: space-between; margin-inline: auto; border-bottom: 1px solid rgb(74 48 36 / 12%); }
-.wordmark { display: grid; width: max-content; justify-items: center; color: var(--color-primary); text-decoration: none; }
-.wordmark__sprig { width: 24px; height: 19px; margin-bottom: -3px; fill: none; stroke: var(--color-secondary); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
-.wordmark__name { font-family: var(--font-heading); font-size: 26px; line-height: 1.12; letter-spacing: -.04em; }
-.wordmark__descriptor { margin-top: 4px; font-size: 9.5px; font-weight: 600; letter-spacing: .24em; line-height: 1; text-transform: uppercase; }
+.wordmark { display: grid; width: max-content; align-items: center; grid-template-columns: auto auto; grid-template-areas: "sprig name" "sprig descriptor"; column-gap: 11px; color: var(--color-primary); text-decoration: none; }
+.wordmark__sprig { grid-area: sprig; width: 27px; height: 22px; align-self: center; fill: none; stroke: var(--color-secondary); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; transition: transform 260ms ease; }
+.wordmark__name { grid-area: name; align-self: end; font-family: var(--font-heading); font-size: 27px; line-height: 1; letter-spacing: -.04em; }
+.wordmark__descriptor { grid-area: descriptor; align-self: start; margin-top: 4px; font-size: 9.5px; font-weight: 600; letter-spacing: .24em; line-height: 1; text-transform: uppercase; }
+.wordmark:hover .wordmark__sprig { transform: rotate(-9deg); }
 .primary-nav { display: flex; align-items: center; gap: clamp(22px, 3.2vw, 48px); }
 .primary-nav > a:not(.button), .footer-nav a { position: relative; font-size: var(--text-nav); text-decoration: none; }
 .primary-nav > a[aria-current="page"] { color: var(--color-primary); font-weight: 700; }

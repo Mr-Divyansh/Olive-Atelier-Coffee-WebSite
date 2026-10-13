@@ -1,0 +1,27 @@
+﻿<!doctype html><html><head><meta charset="utf-8"><title>sh2</title></head><body style="margin:0">
+<iframe id="f" src="../index.html" style="width:1440px;height:700px;border:0;display:block"></iframe>
+<pre id="out">running</pre>
+<script>
+(function(){
+  var f=document.getElementById("f");
+  var t0=Date.now();
+  (function tick(){
+    var ready=f.contentDocument&&f.contentDocument.readyState!=="loading";
+    if(!ready&&Date.now()-t0<8000)return void setTimeout(tick,200);
+    setTimeout(function(){
+      var w=f.contentWindow, d=f.contentDocument;
+      var hdr=d.querySelector(".site-header");
+      var before=hdr.classList.contains("is-scrolled");
+      var sy0=w.scrollY;
+      w.scrollTo(0,500);
+      setTimeout(function(){
+        var after=hdr.classList.contains("is-scrolled");
+        var shadow=w.getComputedStyle(hdr).boxShadow;
+        var out={syBefore:sy0, syAfter:w.scrollY, beforeScroll:before, afterScroll:after, shadow:shadow, pos:w.getComputedStyle(hdr).position};
+        document.getElementById("out").textContent="@@RESULTS@@"+JSON.stringify(out)+"@@END@@";
+        document.title="probe-done";
+      },400);
+    },900);
+  })();
+})();
+</script></body></html>

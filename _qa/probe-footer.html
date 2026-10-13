@@ -1,0 +1,21 @@
+﻿<!doctype html><html><head><meta charset="utf-8"><title>fh</title></head><body>
+<iframe id="f" src="../index.html" style="position:absolute;left:-6000px;top:0;width:1440px;height:800px;border:0;visibility:hidden"></iframe>
+<pre id="out">running</pre>
+<script>
+(function(){
+  var f=document.getElementById("f");
+  var t0=Date.now();
+  (function tick(){
+    var ready=f.contentDocument&&f.contentDocument.readyState!=="loading";
+    if(!ready&&Date.now()-t0<8000)return void setTimeout(tick,200);
+    setTimeout(function(){
+      var d=f.contentDocument,w=d.defaultView;
+      var foot=d.querySelector(".site-footer__main .wordmark");
+      var b=foot.getBoundingClientRect();
+      var out={docH:d.documentElement.scrollHeight, footTop:Math.round(b.top+window.scrollY), footRect:{x:Math.round(b.x),y:Math.round(b.top),w:Math.round(b.width),h:Math.round(b.height)}, display:w.getComputedStyle(foot).display, cols:w.getComputedStyle(foot).gridTemplateColumns};
+      document.getElementById("out").textContent="@@RESULTS@@"+JSON.stringify(out)+"@@END@@";
+      document.title="probe-done";
+    },800);
+  })();
+})();
+</script></body></html>

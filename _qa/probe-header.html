@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Olive Atelier header probe</title>
+</head>
+<body>
+<pre id="out">running</pre>
+<script>
+(function () {
+  const results = [];
+  function scan(width) {
+    return new Promise(res => {
+      const f = document.createElement("iframe");
+      f.style.cssText = "position:absolute;left:-6000px;top:0;width:" + width + "px;height:900px;border:0;visibility:hidden";
+      f.src = "../index.html";
+      document.body.appendChild(f);
+      const t0 = Date.now();
+      const tick = () => {
+        const ready = f.contentDocument && f.contentDocument.readyState !== "loading";
+        if (!ready && Date.now() - t0 < 8000) return void setTimeout(tick, 200);
+        setTimeout(() => {
+          const d = f.contentDocument;
+          const w = d.defaultView;
+          const R = sel => { const e = d.querySelector(sel); if (!e) return null; const b = e.getBoundingClientRect(); return { x: Math.round(b.x), r: Math.round(b.right), w: Math.round(b.width), h: Math.round(b.height) }; };
+          const toggle = d.querySelector(".menu-toggle");
+          const nav = d.querySelector(".primary-nav");
+          const ts = w.getComputedStyle(toggle);
+          const ns = w.getComputedStyle(nav);
+          results.push({
+            width,
+            clientWidth: d.documentElement.clientWidth,
+            toggleDisplay: ts.display,
+            navDisplay: ns.display,
+            toggleRect: R(".menu-toggle"),
+            navRect: R(".primary-nav"),
+            headerRect: R(".site-header__inner"),
+            wordmarkRect: R(".wordmark"),
+            linksWrap: R(".primary-nav").h > 60
+          });
+          f.remove();
+          res();
+        }, 600);
+      };
+      tick();
+    });
+  }
+  (async () => {
+    for (const w of [1920, 1440, 1280, 1100, 1024, 900, 800, 768, 760, 700, 390]) await scan(w);
+    document.getElementById("out").textContent = "@@RESULTS@@" + JSON.stringify(results) + "@@END@@";
+    document.title = "probe-done";
+  })();
+})();
+</script>
+</body>
+</html>

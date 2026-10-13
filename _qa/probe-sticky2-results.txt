@@ -1,0 +1,1 @@
+@@RESULTS@@{"syBefore":0,"syAfter":500,"beforeScroll":false,"afterScroll":true,"shadow":"rgba(36, 56, 44, 0.09) 0px 8px 26px 0px","pos":"sticky"}@@END@@

@@ -1,0 +1,1 @@
+@@RESULTS@@{"position":"sticky","beforeScroll":false,"afterScroll":false,"shadow":"none"}@@END@@
